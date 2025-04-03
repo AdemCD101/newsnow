@@ -172,7 +172,7 @@ nhk: {
   url: "https://www3.nhk.or.jp/rss/news/cat0.xml",
   lang: "en",
   type: "rss"
-}
+},
   "sputniknewscn": {
     name: "卫星通讯社",
     color: "orange",

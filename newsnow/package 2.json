@@ -49,7 +49,6 @@
     "iconv-lite": "^0.6.3",
     "jose": "^6.0.8",
     "jotai": "^2.12.1",
-    "linkedom": "^0.18.9",
     "md5": "^2.3.0",
     "ofetch": "^1.4.1",
     "overlayscrollbars": "^2.11.1",

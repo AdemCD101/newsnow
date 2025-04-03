@@ -63,16 +63,4 @@ export interface SourceOption {
   hiddenDate?: boolean
 }
 
-export interface NewsItem {
-  id: string
-  title: string
-  url: string
-  time: string
-  source: string
-}
-
-export interface Source {
-  fetch: () => Promise<NewsItem[]>
-}
-
 export type SourceGetter = () => Promise<NewsItem[]>

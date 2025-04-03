@@ -136,6 +136,43 @@ export const originSources = {
     color: "gray",
     home: "https://www.thepaper.cn",
   },
+  // 🌍 主流英文媒体（RSS源）
+cnn: {
+  name: "CNN International",
+  url: "https://rss.cnn.com/rss/edition.rss",
+  lang: "en",
+  type: "rss"
+},
+bbc: {
+  name: "BBC World",
+  url: "https://feeds.bbci.co.uk/news/world/rss.xml",
+  lang: "en",
+  type: "rss"
+},
+reuters: {
+  name: "Reuters Top News",
+  url: "https://feeds.reuters.com/reuters/topNews",
+  lang: "en",
+  type: "rss"
+},
+guardian: {
+  name: "The Guardian - World",
+  url: "https://www.theguardian.com/world/rss",
+  lang: "en",
+  type: "rss"
+},
+nyt: {
+  name: "New York Times",
+  url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+  lang: "en",
+  type: "rss"
+},
+nhk: {
+  name: "NHK Japan (English)",
+  url: "https://www3.nhk.or.jp/rss/news/cat0.xml",
+  lang: "en",
+  type: "rss"
+}
   "sputniknewscn": {
     name: "卫星通讯社",
     color: "orange",

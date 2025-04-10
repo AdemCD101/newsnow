@@ -19,14 +19,17 @@ export default {
       const articles = Array.from(document.querySelectorAll("article.gs-c-promo")) as Element[]
       
       return articles.slice(0, 30).map((article) => {
-        const link = article.querySelector("a.gs-c-promo-heading") as HTMLAnchorElement
+        const link = article.querySelector("a.gs-c-promo-heading") as HTMLAnchorElement | null
         const title = article.querySelector(".gs-c-promo-heading__title")
         const time = article.querySelector("time") || article.querySelector(".gs-o-bullet__text")
+        
+        const href = link?.getAttribute("href")
+        const fullUrl = href ? new URL(href, "https://www.bbc.com").href : ""
         
         return {
           id: `bbc-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
           title: title?.textContent?.trim() || "",
-          url: link?.href ? new URL(link.href, "https://www.bbc.com").href : "",
+          url: fullUrl,
           time: time?.getAttribute("datetime") || time?.textContent?.trim() || new Date().toISOString(),
           source: "BBC"
         }

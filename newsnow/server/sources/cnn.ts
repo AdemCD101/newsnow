@@ -19,14 +19,17 @@ export default {
       const articles = Array.from(document.querySelectorAll(".card")) as Element[]
       
       return articles.slice(0, 30).map((article) => {
-        const link = article.querySelector("a.container__link, .card__link")
+        const link = article.querySelector("a.container__link, .card__link") as HTMLAnchorElement | null
         const title = article.querySelector(".container__headline-text, .card__headline-text")
         const time = article.querySelector("time") || article.querySelector(".timestamp")
+        
+        const href = link?.getAttribute("href")
+        const fullUrl = href ? new URL(href, "https://www.cnn.com").href : ""
         
         return {
           id: `cnn-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
           title: title?.textContent?.trim() || "",
-          url: link?.href ? new URL(link.href, "https://www.cnn.com").href : "",
+          url: fullUrl,
           time: time?.getAttribute("datetime") || time?.textContent?.trim() || new Date().toISOString(),
           source: "CNN"
         }

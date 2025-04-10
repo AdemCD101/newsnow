@@ -150,35 +150,53 @@
     "color": "gray",
     "interval": 1800000
   },
-  "CNN": {
-    "name": "CNN",
-    "url": "https://www.cnn.com",
-    "processor": "rss"
+  "cnn": {
+    "name": "CNN International",
+    "type": "rss",
+    "column": "world",
+    "home": "https://edition.cnn.com",
+    "color": "blue",
+    "interval": 1800000
   },
-  "BBC": {
-    "name": "BBC",
-    "url": "https://www.bbc.com",
-    "processor": "rss"
+  "bbc": {
+    "name": "BBC World",
+    "type": "rss",
+    "column": "world",
+    "home": "https://www.bbc.com/news",
+    "color": "red",
+    "interval": 1800000
   },
-  "Reuters": {
-    "name": "Reuters",
-    "url": "https://www.reuters.com",
-    "processor": "rss"
+  "reuters": {
+    "name": "Reuters Top News",
+    "type": "rss",
+    "column": "world",
+    "home": "https://www.reuters.com",
+    "color": "orange",
+    "interval": 1800000
   },
-  "The Guardian": {
-    "name": "The Guardian",
-    "url": "https://www.theguardian.com",
-    "processor": "rss"
+  "guardian": {
+    "name": "The Guardian - World",
+    "type": "rss",
+    "column": "world",
+    "home": "https://www.theguardian.com/international",
+    "color": "blue",
+    "interval": 1800000
   },
-  "New York Times": {
+  "nyt": {
     "name": "New York Times",
-    "url": "https://www.nytimes.com",
-    "processor": "rss"
+    "type": "rss",
+    "column": "world",
+    "home": "https://www.nytimes.com",
+    "color": "gray",
+    "interval": 1800000
   },
-  "NHK": {
-    "name": "NHK",
-    "url": "https://www3.nhk.or.jp/nhkworld/en/",
-    "processor": "rss"
+  "nhk": {
+    "name": "NHK Japan (English)",
+    "type": "rss",
+    "column": "world",
+    "home": "https://www3.nhk.or.jp/nhkworld/en/news/",
+    "color": "red",
+    "interval": 1800000
   },
   "sputniknewscn": {
     "name": "卫星通讯社",

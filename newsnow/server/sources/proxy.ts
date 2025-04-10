@@ -7,7 +7,11 @@ const PROXY_URL = "https://api.allorigins.win/raw?url="
 export default {
   async fetch() {
     try {
-      const html = await $fetch(PROXY_URL + encodeURIComponent("https://www.cnn.com/world"), {
+      console.log("Fetching CNN news through proxy...")
+      const targetUrl = "https://www.cnn.com/world"
+      console.log("Target URL:", targetUrl)
+      
+      const response = await $fetch(PROXY_URL + encodeURIComponent(targetUrl), {
         headers: {
           "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
           "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
@@ -17,8 +21,11 @@ export default {
         }
       })
       
-      const { document } = parseHTML(html)
+      console.log("Proxy response received, length:", response.length)
+      
+      const { document } = parseHTML(response)
       const articles = Array.from(document.querySelectorAll(".card")) as Element[]
+      console.log("Found articles:", articles.length)
       
       return articles.slice(0, 30).map((article) => {
         const link = article.querySelector("a.container__link, .card__link") as HTMLAnchorElement | null
@@ -38,6 +45,13 @@ export default {
       }).filter(item => item.title && item.url)
     } catch (error) {
       console.error("Error fetching CNN news through proxy:", error)
+      if (error instanceof Error) {
+        console.error("Error details:", {
+          message: error.message,
+          stack: error.stack,
+          name: error.name
+        })
+      }
       return []
     }
   }
